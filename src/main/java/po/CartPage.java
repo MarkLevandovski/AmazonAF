@@ -7,18 +7,24 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import utils.SeleniumUtils;
 
+/**
+ * Class represents Cart Page
+ */
 public class CartPage extends MainPage {
-    public final static Logger LOGGER= LoggerFactory.getLogger(CartPage.class);
+    public final static Logger LOGGER = LoggerFactory.getLogger(CartPage.class);
 
     public CartPage(WebDriver driver) {
         super(driver);
     }
 
-    private By cartSubtotalBox = By.id("hlb-subcart");
-    private By fullPrize = By.className("hlb-price");
     private By successMessage = By.className("huc-v2-color-success");
     private By cartButton = By.id("hlb-view-cart-announce");
 
+    /**
+     * Method verifies that success message is displayed
+     *
+     * @return CartPage
+     */
     public CartPage verifyProductAddedToCart() {
         SeleniumUtils.defaultWait(driver).until(new ExpectedCondition<Boolean>() {
             @Override
@@ -31,6 +37,11 @@ public class CartPage extends MainPage {
         return this;
     }
 
+    /**
+     * Method that goes to Shopping Cart page
+     *
+     * @return ShoppingCartPage
+     */
     public ShoppingCartPage viewShoppingCart() {
         driver.findElement(cartButton).click();
 

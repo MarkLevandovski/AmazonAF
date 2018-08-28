@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import utils.SeleniumUtils;
 
 public class MainPage {
-    public final static Logger LOGGER= LoggerFactory.getLogger(MainPage.class);
+    public final static Logger LOGGER = LoggerFactory.getLogger(MainPage.class);
 
     protected WebDriver driver;
 
@@ -19,18 +19,16 @@ public class MainPage {
     private By searchBox = By.id("twotabsearchtextbox");
     private By searchButton = By.name("site-search");
 
-    public ResultsPage searchByName(String itemName) {
-        driver.get("http://amazon.com");
-
+    public ResultsPage searchByName(String productName) {
         SeleniumUtils.defaultWait(driver).until(new ExpectedCondition<Boolean>() {
             @Override
             public Boolean apply(WebDriver driver) {
-                LOGGER.info("Waiting for Home Page....");
+                LOGGER.info("Waiting for Main Page....");
                 return driver.findElement(searchBox) != null;
             }
         });
 
-        driver.findElement(searchBox).sendKeys(itemName);
+        driver.findElement(searchBox).sendKeys(productName);
         driver.findElement(searchButton).submit();
 
         return new ResultsPage(driver);
