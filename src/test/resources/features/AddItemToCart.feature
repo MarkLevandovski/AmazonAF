@@ -12,4 +12,4 @@ Feature: Add Item to Cart
 
     Examples:
       | productName                     | itemNumber | quantity |
-      | Best sellers in Digital Cameras | 5          | 2        |
+      | Best sellers in Digital Cameras | 5          | 8        |
