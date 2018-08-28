@@ -3,4 +3,4 @@
 How to run:
 Run following command inside the project root directory
 
-```mvn clean test -Dcucumber.options="--tags @Cart"```
+```mvn clean install test -Dcucumber.options="--tags @Cart"```
