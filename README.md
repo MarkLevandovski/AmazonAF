@@ -1,4 +1,4 @@
-#Amazo.com test
+# Amazon.com test
 
 How to run:
 Run following command inside the project root directory
